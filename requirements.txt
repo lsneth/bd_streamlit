@@ -3,5 +3,4 @@ pandas
 pyarrow
 altair
 polars
-pickle
 numpy
