@@ -2,7 +2,7 @@ import streamlit as st
 import polars as pl
 import altair as alt
 
-df = pl.read_csv('./data/survey_results_public.csv')
+df = pl.read_parquet('./data/survey_results_public.parquet')
 
 def show_explore_page():
     st.title('Explore Page')
