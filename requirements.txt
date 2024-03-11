@@ -4,4 +4,4 @@ pyarrow
 altair
 polars
 numpy
-sklearn
+scikit-learn
