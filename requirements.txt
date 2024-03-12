@@ -3,4 +3,3 @@ altair
 polars
 numpy
 scikit-learn
-protobuf <= 3.20
