@@ -12,8 +12,8 @@ st.title('Build a Machine Learning Web App with Streamlit')
 
 st.header('Objectives')
 st.markdown('1. Understand the basics of Streamlit')
-st.markdown('3. Import and use a pre-trained model')
-st.markdown('2. Build a simple web app using Streamlit')
+st.markdown('2. Import and use a pre-trained model')
+st.markdown('3. Build a simple web app using Streamlit')
 st.markdown('4. Deploy the web app')
 
 st.header('What is Streamlit?')
