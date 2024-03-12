@@ -8,13 +8,17 @@ st.title('[Charts](https://docs.streamlit.io/library/api-reference/charts)')
 
 st.header('Stack Overflow Developer Survey Data')
 
-df = pl.read_parquet('./data/survey_results_public.parquet')\
-    .drop_nulls(subset=['YearsCodePro', 'ConvertedCompYearly'])\
-    .with_columns(
-        pl.col('YearsCode').replace({'Less than 1 year': 0, 'More than 50 years': 50}).cast(pl.Int32),
-        pl.col('YearsCodePro').replace({'Less than 1 year': 0, 'More than 50 years': 50}).cast(pl.Int32),
-    )\
-    .sort('YearsCodePro')
+@st.cache_data
+def get_survey_data():
+    return pl.read_parquet('./data/survey_results_public.parquet')\
+            .drop_nulls(subset=['YearsCodePro', 'ConvertedCompYearly'])\
+            .with_columns(
+                pl.col('YearsCode').replace({'Less than 1 year': 0, 'More than 50 years': 50}).cast(pl.Int32),
+                pl.col('YearsCodePro').replace({'Less than 1 year': 0, 'More than 50 years': 50}).cast(pl.Int32),
+            )\
+            .sort('YearsCodePro')
+
+df = get_survey_data()
 
 st.dataframe(df.head())
 
