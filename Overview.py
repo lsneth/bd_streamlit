@@ -33,8 +33,8 @@ st.markdown("""
 
 st.header('Let\'s get started!')
 
-st.markdown('1. **Clone this repo**')
-st.markdown('[Streamlit DS450 Demo](https://github.com/lsneth/bd_streamlit/tree/main)')
+st.markdown('1. **Fork this repo**')
+st.markdown('[Streamlit DS450 Demo](https://github.com/lsneth/bd_streamlit_template)')
 
 st.markdown('2. **Install the required packages**')
 st.code('pip install -r requirements.txt')
