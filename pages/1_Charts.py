@@ -23,9 +23,19 @@ df = get_survey_data()
 st.dataframe(df.head())
 
 st.header('Salary by Number of Years of Professional Experience - [`st.scatter_chart`](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart)')
+st.code("st.scatter_chart(df, x='YearsCodePro', y='ConvertedCompYearly', size=5)")
 st.scatter_chart(df, x='YearsCodePro', y='ConvertedCompYearly', size=5)
 
 st.header('Salary by Number of Years of Professional Experience - [`st.altair_chart`](https://docs.streamlit.io/library/api-reference/charts/st.altair_chart)')
+st.code('''
+    chart = alt.Chart(df).mark_circle(size=5).encode(
+        x='YearsCodePro',
+        y=alt.Y('ConvertedCompYearly', scale=alt.Scale(domain=(0, 300000))),
+        tooltip=['YearsCodePro', 'ConvertedCompYearly']
+    ).interactive()
+        
+    st.altair_chart(chart, use_container_width=True)
+''')
 chart = alt.Chart(df).mark_circle(size=5).encode(
     x='YearsCodePro',
     y=alt.Y('ConvertedCompYearly', scale=alt.Scale(domain=(0, 300000))),
