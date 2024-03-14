@@ -2,12 +2,9 @@ import streamlit as st
 import pickle
 import numpy as np
 
-def load_model():
-    with open('data/model.pkl', 'rb') as file:
-        data = pickle.load(file)
-    return data
+# TODO: Load model here
 
-data = load_model()
+
 
 regressor = data["model"]
 le_country = data["le_country"]
