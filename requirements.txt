@@ -3,3 +3,4 @@ altair
 polars
 numpy
 scikit-learn
+matplotlib
